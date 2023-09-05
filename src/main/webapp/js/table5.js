@@ -11,8 +11,10 @@ window.onload = function(){
 	let h2 = new Hero(18,25);	
 	let h3 = new Hero(10,10);	
 
-	table.onclick = function(){
+	table.onclick = function(e){
+		
 		h.target.focus();
+		
 	}
 	
  
@@ -33,25 +35,24 @@ class Hero {
 	target.tabIndex =1;
 	
 	this.target = target;
-		
+	this.blink();	
 	this.target.onkeydown = e => {
 	this.keydown(e);
+	
 	  }
-	  
-	setInterval( () =>{  
-		 
-		 if(this.target.style.visibility =='visible')
-		  this.target.style.visibility ='hidden';
-		 else 
-		  this.target.style.visibility ='visible';
-	 
-	 },Math.random()*500+10 );  
+	this.target.onclick = e => this.click(e);
+	
+	
  }	
 
+	/** @param {MouseEvent} e */
+	click(e) {
+		e.stopPropagation();
+	}
+	
+	
+	
 	/**@param {KeyboardEvent} e */	
-	
-	
-	
 	keydown(e){
 		console.log(e.key);
 		console.log(e);
@@ -75,6 +76,22 @@ class Hero {
 		e.stopPropagation();
 		if(e.key.startsWith("Arrow"))
 			e.preventDefault();
+	}
+	
+	blink(){
+		setInterval( () =>{  
+		 
+		 if(this.target.style.visibility =='visible'){
+		  this.target.style.visibility ='hidden';
+		  
+		  }
+		 else {
+		  this.target.style.visibility ='visible';
+	 		
+	 }
+	 },Math.random()*500+10 ); 
+	 
+	
 	}
 	
 	up(){
