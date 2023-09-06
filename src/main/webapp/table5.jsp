@@ -25,7 +25,7 @@
 </style>
 
 <script type="text/javascript" src="/js/table5.js">
-
+document.get
 </script>
 </head>
 <body>

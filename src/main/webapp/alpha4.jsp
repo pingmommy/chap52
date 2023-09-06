@@ -58,7 +58,7 @@ ${e.message}<br>
 
 <hr>
 
-<a href="alpha_form.jsp">뒤로가기</a>
+<a href="alpha5.jsp">뒤로가기</a>
 
 </body>
 </html>
