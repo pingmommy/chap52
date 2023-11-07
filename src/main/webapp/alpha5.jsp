@@ -26,7 +26,7 @@
 		<label for="line">line</label>
 		<input id="line" type="number" value="${param.line}" name="line" min="1" max="20">
 		<label for="column">column</label>
-		<input id="column" type="number" value="${param.column}" name="column" min="1" max="40">
+		<input id="column" type="number" value="${param.column}"  name="column" min="1" max="40">
 	</fieldset>
 	<fieldset>
 		<legend>CHARACTER</legend>
@@ -37,10 +37,12 @@
 		
 			<c:choose>
 				<c:when test="${param.ch eq ch}">
-					<input id="${ch}" type="radio" name="ch" value="${ch}" checked="checked">				
+					<input id="${ch}" type="radio" name="ch"  value="${ch}"
+					 checked="checked">				
 				</c:when>
 				<c:otherwise>
-					<input id="${ch}" type="radio" name="ch" value="${ch}">
+					<input id="${ch}" type="radio" name="ch"  value="${ch}"
+					 >
 				</c:otherwise>
 			</c:choose>
 		
